@@ -1,0 +1,15 @@
+/etc/systemd/system
+
+[unit]
+After=network.target
+After=multi-user.target
+StartLimitintervelSec=0
+
+[Service]
+Type=simple
+Restart=always
+RestartSec=1
+ExecStart=/usr/bin/bash /home/loadtest/Desktop/RTL/stream.sh
+
+[Install]
+WantedBy=multi-user.target
